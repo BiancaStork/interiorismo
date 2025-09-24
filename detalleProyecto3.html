@@ -15,16 +15,16 @@
     font-family: 'Montserrat', serif;
     background: #fff;
   }
-  .header {
+.header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 95%;
   height: 70px;
-  padding: 0 20px;
+  padding: 0 20px; /* margen lateral general */
   display: flex;
   align-items: center;
-  justify-content: space-between; /* logo izq - título centro - botón der */
+  justify-content: space-between; /* logo izq, título centro, botón der */
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid #eee;
@@ -55,6 +55,7 @@
   transition: background 0.3s;
 }
 
+/* hover */
 .btn-volver:hover {
   background: #555;
 }
@@ -62,14 +63,20 @@
 /* 🔹 Mobile ajustes */
 @media (max-width: 768px) {
   .titulo {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .btn-volver {
-    font-size: 0.8rem;
-    padding: 5px 10px;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+
+  .logo img {
+    height: 40px;
   }
 }
+
+
 
   .container {
     max-width: 1200px;
