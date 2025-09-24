@@ -1,0 +1,177 @@
+ body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Lora', serif;
+}
+
+/* Mobile por defecto */
+.projects {
+  display: flex;
+  flex-direction: column; /* 1 por fila */
+  margin: 0 16px; /* margen lateral */
+  gap: 16px; /* espacio entre proyectos */
+}
+
+.project {
+  height: calc(100vh - 32px); /* altura de pantalla menos margen superior e inferior */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  /* border-radius: 8px; */
+  overflow: hidden;
+   cursor: pointer; 
+}
+
+/* Título */
+.project-title {
+  font-family: "Montserrat", sans-serif;;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Escritorio: 3 columnas */
+@media (min-width: 1024px) {
+  .projects {
+    flex-direction: row;
+    gap: 16px;
+    margin: 0 16px;
+  }
+
+  .project {
+    height: calc(100vh - 32px);
+    flex: 1; /* ocupa 1/3 del ancho */
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+}
+    header {
+      text-align: center;
+      padding: 2rem;
+      border-bottom: 1px solid #eee;
+    }
+    h1 {
+      font-weight: 500;
+      font-size: 2rem;
+      margin: 0;
+    }
+    p {
+      font-size: 1rem;
+      color: #666;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .card:hover img {
+      transform: scale(1.05);
+    }
+    .card-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+    }
+    .lightbox:target {
+      display: flex;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 2rem;
+      text-decoration: none;
+    }
+    .grid {
+  display: grid;
+  grid-template-columns: 1fr; /* por defecto en mobile: uno por fila */
+}
+
+.card {
+  position: relative;
+  height: calc(100vh - 100px); /* ocupa el alto de pantalla menos el header */
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantiene proporciones y recorta */
+  display: block;
+}
+
+.card-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  color: #fff;
+  font-size: 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+/* En escritorio: 3 columnas */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card {
+    height: calc((100vh - 100px) / 1.1); /* altura más baja para que quepan en pantalla */
+  }
+
+  .card-title {
+    font-size: 1rem; /* texto más chico para varias columnas */
+  }
+}
